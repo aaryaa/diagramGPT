@@ -1,0 +1,8 @@
+User Summary 
+Design a ETL pipeline to analyse twitter data using tools/libraries like AWS, Spark, MySql, AWS Kinesis
+
+
+Design an ETL pipeline for Twitter data analysis using AWS, Spark, MySQL, and AWS Kinesis. Collect data from Twitter, process it with Spark, store in MySQL, and use AWS Kinesis for streaming data.
+
+
+Design a messaging app like WhatsApp using tools such as Flutter for cross-platform development, Firebase for user authentication and real-time messaging, Cloud Firestore for data storage, and Firebase Cloud Messaging for notifications. Use end-to-end encryption for message security and comply with GDPR for data protection

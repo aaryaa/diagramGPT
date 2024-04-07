@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Python Code and Output</title>
+    <style>
+        /* Add styles as needed */
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .design-details-container,.code-container, .output-container {
+            width: 48%; /* Adjust as needed */
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="design-details-container">
+            <h2>Generated Software Design Details</h2>
+            <pre>{{ generated_design_requirement }}</pre>
+        </div>
+    <div class="container">
+        <div class="code-container">
+            <h2>Diagram Code</h2>
+            <pre>{{ generated_diagram_code | safe }}</pre>
+        </div>
+        <div class="image-container">
+            <h2>Generated Diagram</h2>
+            <img src="{{python_output}}" alt="Generated Diagram">
+        </div>
+    </div>
+</body>
+</html>

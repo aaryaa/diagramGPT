@@ -1,0 +1,48 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagram Generator</title>
+</head>
+<body>
+
+    <div>
+        {% if generated_diagram_code %}
+        <h2>Generated Diagram Code</h2>
+        <pre id="diagram-code">{{ generated_diagram_code }}</pre>
+        {% endif %}
+    </div>
+
+    <div>
+        {% if execution_result %}
+        <h2>Execution Result</h2>
+        <pre id="execution-result">{{ execution_result }}</pre>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function generateAndExecuteDiagram() {
+            var userSummary = $('#user_summary').val();
+            
+            // Make an AJAX request to your Flask endpoint
+            $.ajax({
+                type: 'POST',
+                url: '/generate_and_execute_diagram',
+                data: { user_summary: userSummary },
+                success: function(response) {
+                    // Update HTML elements with the response data
+                    //$('#generated-requirements').html(response.generated_design_requirement);
+                    $('#diagram-code').html(response.generated_diagram_code);
+                    //$('#execution-result').html(response.execution_result);
+                },
+                error: function(error) {
+                    console.error('Error generating and executing diagram:', error);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
